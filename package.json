@@ -1,0 +1,28 @@
+{
+  "name": "secret_dapp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Secret DApp Hardhat project",
+  "license": "MIT",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "hardhat clean",
+    "deploy:sepolia": "hardhat run scripts/deploy.ts --network sepolia",  
+    "offchain:gen": "ts-node --esm offchain/make_shares_encrypt.ts"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "6.1.0",
+    "@types/node": "20.14.10",
+    "dotenv": "16.4.5",
+    "hardhat": "2.26.3",
+    "ts-node": "10.9.2",
+    "typescript": "5.6.3"
+  },
+  "dependencies": {
+    "eciesjs": "^0.4.15",
+    "secrets.js-grempe": "^2.0.0"
+  }
+
+}
