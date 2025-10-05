@@ -18,7 +18,8 @@ Decentralizovana aplikacija za bezbedno deljenje tajni korišćenjem Shamir M-of
 
 **Arhitektura**
 
-```contracts/
+```
+contracts/
 --SecretRegistry.sol          
 frontend/                     
 --src/App.jsx                 
@@ -31,23 +32,28 @@ offchain/
 scripts/
 --deploy.ts                  
 test/
---SecretRegistry.ts```
+--SecretRegistry.ts
+```
 
 
 **Instalacija i pokretanje**
 
 U rootu projekta: 
 
-```npm install
+```
+npm install
 npx hardhat compile
-npx hardhat test```
+npx hardhat test
+```
 
 
 **Frontend (Vite + React)**
 
-```cd frontend
+```
+cd frontend
 npm install
-npm run dev```
+npm run dev
+```
 
 U UI:
 
@@ -76,29 +82,39 @@ U UI:
 
 Popunite offchain/participants.json:
 
-```[
+```
+[
   { "address": "0x...", "pubkey": "0x04...(130 heks)" },
   { "address": "0x...", "pubkey": "0x04...(130 heks)" }
-]```
+]
+```
 
 
 U offchain/make_shares_encrypt.ts podesite:
 
-```const label = "secret#demo";           
+```
+const label = "secret#demo";           
 const secretPlaintext = "OVDE TAJNA"; 
 const salt = "neki-string";           
-const M = 2;```
+const M = 2;
+```
 
 Pokreni:
-```npm run offchain:gen```
+```
+npm run offchain:gen
+```
 
 Rezultat:
-```offchain/out/<secretId>/bundle.json```
+```
+offchain/out/<secretId>/bundle.json
+```
 
 
 **Testovi**
 
-```npx hardhat test```
+```
+npx hardhat test
+```
 
 Test pokriva:
 
