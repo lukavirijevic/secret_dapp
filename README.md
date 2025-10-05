@@ -1,8 +1,9 @@
-# SecretRegistry DApp — Shamir M-of-N (Ethereum Sepolia)
+# SecretRegistry DApp - Shamir M-of-N (Ethereum Sepolia)
 
 Decentralizovana aplikacija za bezbedno deljenje tajni korišćenjem Shamir M-of-N šeme.
-On-chain - čuvanje metapodataka i potvrde učesnika, dok se stvarni delovi tajne dele i čuvaju 
-Off-chain - šifrovani javnim ključem svakog učesnika
+- On-chain - čuvanje metapodataka i potvrde učesnika, dok se stvarni delovi tajne dele i čuvaju 
+- Off-chain - šifrovani javnim ključem svakog učesnika
+
 
 **Funkcionalnosti**
 
@@ -14,29 +15,33 @@ Off-chain - šifrovani javnim ključem svakog učesnika
 
 - Close secret: vlasnik zatvara zapis (dalje potvrde nisu moguće).
 
+
 **Arhitektura**
 
 contracts/
-  SecretRegistry.sol          
+--SecretRegistry.sol          
 frontend/                     
-  src/App.jsx                 
-  src/App.css                
-  src/deployments/sepolia.json
+--src/App.jsx                 
+--src/App.css                
+--src/deployments/sepolia.json
 offchain/
-  participants.json           
-  make_shares_encrypt.ts      
-  out/<secretId>/bundle.json 
+--participants.json           
+--make_shares_encrypt.ts      
+--out/<secretId>/bundle.json 
 scripts/
-  deploy.ts                  
+--deploy.ts                  
 test/
-  SecretRegistry.ts 
+--SecretRegistry.ts 
+
 
 **Instalacija i pokretanje**
 
-# u rootu projekta
+U rootu projekta: 
+
 npm install
 npx hardhat compile
 npx hardhat test
+
 
 **Frontend (Vite + React)**
 
@@ -46,9 +51,9 @@ npm run dev
 
 U UI:
 
-1. Connect MetaMask (izaberi nalog).
+1. **Connect MetaMask** (izaberi nalog).
 
-2. Registracija (sekcija 1):
+2. **Registracija** (sekcija 1):
 
 - Secret label (npr. backup#2025-10 → UI prikazuje secretId)
 
@@ -58,7 +63,7 @@ U UI:
 
 - Register Secret
 
-3. Potvrda (sekcija 2):
+3. **Potvrda** (sekcija 2):
 
 - Nalepi isti secretId
 
@@ -76,6 +81,7 @@ Popunite offchain/participants.json:
   { "address": "0x...", "pubkey": "0x04...(130 heks)" }
 ]
 
+
 U offchain/make_shares_encrypt.ts podesite:
 
 const label = "secret#demo";           
@@ -89,9 +95,10 @@ npm run offchain:gen
 Rezultat:
 offchain/out/<secretId>/bundle.json
 
-**Testovi**
-npx hardhat test
 
+**Testovi**
+
+npx hardhat test
 
 Test pokriva:
 
@@ -104,8 +111,4 @@ Test pokriva:
 - closeSecret → samo owner, emit SecretClosed, posle čega potvrda revertuje
 
 
-
-
-
---network sepolia ignition/modules/Counter.ts
 ```
