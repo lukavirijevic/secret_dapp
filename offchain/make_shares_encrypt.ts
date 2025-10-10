@@ -6,8 +6,8 @@ import { Buffer } from "node:buffer";
 import { TextEncoder } from "node:util";
 import { getBytes } from "ethers"; 
 
-const label = "secret#demo";                 
-const secretPlaintext = "postavljam loz=nku za probu iz kriptografije";    
+const label = "secret#demo11";                 
+const secretPlaintext = "postavljam lozinku za probu iz kriptografije";    
 const salt = "neki.string123";              
 
 const M = 2;                                 
