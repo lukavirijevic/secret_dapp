@@ -2,7 +2,6 @@
   "name": "secret_dapp",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
   "description": "Secret DApp Hardhat project",
   "license": "MIT",
   "scripts": {
