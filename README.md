@@ -131,6 +131,4 @@ Test pokriva:
 - canReconstruct → true kad potvrde ≥ M
 
 - closeSecret → samo owner, emit SecretClosed, posle čega potvrda revertuje
-
-
 ```
